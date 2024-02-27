@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <%- include("./partials/header.ejs") %>
+<body>
+  <div class="w-full my-4 mx-auto p-2">
+    <form action="/create" method="POST" class="flex flex-col w-[300px] gap-2">
+        <label for="sign">Choose sign: </label>
+        <select class="border text-white bg-default w-[100px]" name="sign" id="sign">
+            <option value="+">plus</option>
+            <option value="-">minus</option>
+        </select>
+        <label for="language">Choose language: </label>
+        <select class="border text-white bg-default w-[100px]" name="language" id="language">
+          <option value="english">Eng</option>
+          <option value="myanmar">Myan</option>
+      </select>
+        <label for="amount">Input amount: </label>
+        <input type="number" name="amount" id="amount" class="border border-default p-1" placeholder="amount" required>
+        <label for="time">Input time: </label>
+        <p class="text-sm text-slate-400 border bg-slate-100 border-black p-2">Time will input automically.</p>
+        <label for="time">Input date: </label>
+        <p class="text-sm text-slate-400 border bg-slate-100 border-black p-2">Date will input automically.</p>
+        <!-- <div class="flex">
+          <label for="transaction" class="">Generate Transaction number: </label>
+          <button id="generateButton" class="border p-1 bg-default text-white">Generate</button>
+        </div>
+        <p class="flex-wrap basis-full border border-default" id="displayTransaction"></p> -->
+        <label for="type">Select Transaction Type: </label>
+        <select class="border text-white bg-default w-[100px]" name="type" id="type">
+          <option value="Transfer">Transfer</option>
+        </select>
+        <label for="name">Enter receiver name: </label>
+        <input type="text" name="name" id="name" class="border border-default p-1" placeholder="Receiver Name" required>
+        <label for="phone">Enter phone number: </label>
+        <input type="number" name="phone" id="phone" class="border border-default p-1" placeholder="09" required>
+        <label for="note">Enter note: </label>
+        <input type="text" name="note" id="note" class="border border-default p-1" placeholder="Optional">
+        <button type="submit" class="border bg-default p-2 text-white font-bold">Submit</button>
+    </form>
+  </div>
+  <script src="create.js"></script>
+  <!-- <script>
+    document.getElementById('generateButton').addEventListener('click', function () {
+      // Generate a random 8-digit number
+      const randomDigits = Math.floor(10000000 + Math.random() * 90000000);
+
+      // Construct the full number with the prefix
+      const fullNumber = '01003226060' + randomDigits;
+
+      // Display the generated number on the page
+      document.getElementById('displayTransaction').textContent = 'Transaction number generated: ' + fullNumber;
+    });
+  </script> -->
+</body>
+</html>

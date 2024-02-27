@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <%- include("./partials/header.ejs") %>
+<body>
+  <div class="w-full h-screen mx-auto bg-default relative text-center">
+    <!-- <nav class="bg-default flex items-center p-3">
+        <i class="lni lni-arrow-left text-white text-[25px] mr-4"></i>
+        <span class="text-white">Details</span>
+    </nav> -->
+    <div class="bg-white min-h-[420px] w-[90%]  absolute left-4 top-10 rounded">
+      <nav class="flex justify-between items-center px-2 bg-slate-200 rounded-tl-sm rounded-tr-sm">
+        <img src="img/kbz-logo.png" class="w-[70px]">
+        <p class="font-bold text-[14px]">E-Receipt</p>
+      </nav>
+      <div class="text-center mt-6 mb-8">
+        <p class="font-[400] text-3xl" id=""><span id="sign"><%= data.sign %></span><span id="amount"><%= data.amount %></span><span class="text-[14px] text-dark ml-1">(Ks)</span></p>
+      </div>
+      <div class="container px-3">
+        <% contentArray.forEach(content => { %>
+          <div class="flex text-[12px] font-[400] justify-between mb-3">
+            <p class="text-darkGrey"><%= content.prop %></p>
+            <p class="text-dark font-bold"><%= content.value %></p>
+          </div>
+        <% }) %>
+      </div>
+      <div class="">
+        <img src="img/line3.svg" class="w-full absolute -bottom-[150px]">
+        <div class="absolute bottom-[60px] -left-3 w-[20px] h-[20px] rounded-full bg-default"></div>
+        <div class="absolute bottom-[60px] -right-3 w-[20px] h-[20px] rounded-full bg-default"></div>
+      </div>
+
+      <div class="flex justify-between items-center bg-white px-3 mt-14">
+        <img src="img/kbz-pay.png" class="w-[40px]">
+        <p class="font-bold text-[13px]">Thank you for using KBZPay!</p>
+      </div>  
+      
+      <footer class="absolute -bottom-[290px]">
+        <p class="text-start text-[9px] text-[#d8d8d8]">The e-receipt only means you already paid for the merchant. You need to confirm the final transaction status with merchant.</p>
+      </footer>
+    </div>
+    <div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
